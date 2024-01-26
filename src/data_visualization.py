@@ -35,7 +35,8 @@ plt.plot(df['C'], label='Close')
 plt.plot(df['SMA'], label='20-day SMA')
 plt.title('Close Price and SMA')
 plt.legend()
-plt.show()
+plt.savefig('output/ClosePrice_and_SMA.png')
+
 
 # Plot for MACD and Signal Line
 
@@ -44,4 +45,5 @@ plt.plot(df['MACD'], label='MACD')
 plt.plot(df['Signal_Line'], label='Signal Line')
 plt.title('MACD and Signal Line')
 plt.legend()
-plt.show()
+plt.savefig('output/MACD_and_SignalLine.png')
+
