@@ -3,3 +3,7 @@ src/__pycache__/
 
 # Ignore virtual environment
 venv/
+
+# Ignore plots generated
+
+output/
