@@ -1,0 +1,5 @@
+# Ignore Python bytecodes in src directory
+src/__pycache__/
+
+# Ignore virtual environment
+venv/
