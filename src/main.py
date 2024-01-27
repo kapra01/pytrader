@@ -16,5 +16,5 @@ fetch.print_df(df1)
 #fetch.print_df(df2)
 #fetch.print_df(df3)
 
-dv.create_plot(df1,"IBM Time Series Daily plot with Exponential Moving Average analysis using short 20 day period")
+dv.create_plot(df1,"IBM Time Series Daily plot with Exponential Moving Average analysis using short 20 day period","Close","20d_EMA")
 

@@ -35,11 +35,14 @@ plt.savefig('output/MACD_and_SignalLine.png')
 
 '''
 
-def create_plot(df, title):
-    plt.figure(figsize=(10, 6))
-    for col in df.columns.tolist():
-        plt.plot(df[col], label=col)
-    plt.title(title)
+def create_plot(df, title, *columns):
+    # plt.figure(figsize=(20, 20))
+    # To print all columns:
+    # for col in df.columns.tolist():
+    #    plt.plot(df[col], label=col)
+    # To print columns supplied:
+    df[list(columns)].plot()  # list converts the tuple columns
+    plt.title(title, wrap=True)
     plt.legend()
     filepath = 'output/' + title.replace(' ','_')
     plt.savefig(filepath)
