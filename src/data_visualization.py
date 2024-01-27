@@ -5,21 +5,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-# Create a date range
-dates = pd.date_range(start='2023-01-01', end='2023-12-31', freq='B')  # Business days
-
-# Generate dummy OHLCV data
-np.random.seed(0)  # For reproducible results
-data = {
-    'O': np.random.rand(len(dates)) * 100,
-    'H': np.random.rand(len(dates)) * 100,
-    'L': np.random.rand(len(dates)) * 100,
-    'C': np.random.rand(len(dates)) * 100,
-    'V': np.random.rand(len(dates)) * 1000
-}
-df = pd.DataFrame(data, index=dates)
-
+'''
 # Calculate SMA and MACD
 df['SMA'] = df['C'].rolling(window=20).mean()
 short_ema = df['C'].ewm(span=12, adjust=False).mean()
@@ -47,3 +33,32 @@ plt.title('MACD and Signal Line')
 plt.legend()
 plt.savefig('output/MACD_and_SignalLine.png')
 
+'''
+
+def create_plot(df, title):
+    plt.figure(figsize=(10, 6))
+    for col in df.columns.tolist():
+        plt.plot(df[col], label=col)
+    plt.title(title)
+    plt.legend()
+    filepath = 'output/' + title.replace(' ','_')
+    plt.savefig(filepath)
+    plt.show()
+
+'''
+# Generate dummy OHLCV data
+
+# Create a date range
+dates = pd.date_range(start='2023-01-01', end='2023-12-31', freq='B')  # Business days
+
+np.random.seed(0)  # For reproducible results
+data = {
+    'O': np.random.rand(len(dates)) * 100,
+    'H': np.random.rand(len(dates)) * 100,
+    'L': np.random.rand(len(dates)) * 100,
+    'C': np.random.rand(len(dates)) * 100,
+    'V': np.random.rand(len(dates)) * 1000
+}
+df = pd.DataFrame(data, index=dates)
+
+'''
