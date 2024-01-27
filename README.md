@@ -5,7 +5,7 @@ PyTrader is a Python-based trading platform designed for high-frequency trading 
 
 ## Installation
 To set up PyTrader, follow these steps:
-1. Clone the repository: `git clone <repo_url>`
+1. Clone the repository: `git clone https://github.com/kapra01/pytrader.git`
 2. Set up a virtual environment: `python -m venv venv`
 3. Activate the virtual environment:
    - Windows: `venv\Scripts\activate`
